@@ -1,4 +1,11 @@
+import styled from "@emotion/styled";
 import { useState } from "react";
+
+const WeatherInput = styled.input`
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 250px;
+`;
 
 export default function WeatherForm({ onChangeCity }) {
   const [city, setCity] = useState("");
@@ -18,7 +25,11 @@ export default function WeatherForm({ onChangeCity }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={onChange} />
+        <WeatherInput
+          type="text"
+          onChange={onChange}
+          placeholder="Ingrese una Ciudad o un Pais"
+        />
       </form>
     </>
   );
